@@ -1,4 +1,4 @@
-module github.com/ai-connor/pipedrive-api
+module github.com/ai-connor/addigy-api
 
 go 1.23
 

@@ -7,7 +7,7 @@ openapi-generator-cli generate \
     -c config.yaml \
     --skip-validate-spec \
     --git-user-id ai-connor \
-    --git-repo-id pipedrive-api
+    --git-repo-id addigy-api
 
 cd ../..
 go fmt
