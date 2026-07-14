@@ -23,7 +23,7 @@ type AlertEntitiesAlert struct {
 	Description          *string                `json:"description,omitempty"`
 	Emails               []string               `json:"emails,omitempty"`
 	FactIdentifier       *string                `json:"fact_identifier,omitempty"`
-	HasScript            *bool                  `json:"has_script,omitempty"`
+	HasScriptFlag        *bool                  `json:"has_script,omitempty"`
 	Id                   *string                `json:"id,omitempty"`
 	Instructions         map[string]interface{} `json:"instructions,omitempty"`
 	IsInBlueprint        *bool                  `json:"is_in_blueprint,omitempty"`
@@ -195,36 +195,36 @@ func (o *AlertEntitiesAlert) SetFactIdentifier(v string) {
 	o.FactIdentifier = &v
 }
 
-// GetHasScript returns the HasScript field value if set, zero value otherwise.
-func (o *AlertEntitiesAlert) GetHasScript() bool {
-	if o == nil || IsNil(o.HasScript) {
+// GetHasScriptFlag returns the HasScriptFlag field value if set, zero value otherwise.
+func (o *AlertEntitiesAlert) GetHasScriptFlag() bool {
+	if o == nil || IsNil(o.HasScriptFlag) {
 		var ret bool
 		return ret
 	}
-	return *o.HasScript
+	return *o.HasScriptFlag
 }
 
-// GetHasScriptOk returns a tuple with the HasScript field value if set, nil otherwise
+// GetHasScriptFlagOk returns a tuple with the HasScriptFlag field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AlertEntitiesAlert) GetHasScriptOk() (*bool, bool) {
-	if o == nil || IsNil(o.HasScript) {
+func (o *AlertEntitiesAlert) GetHasScriptFlagOk() (*bool, bool) {
+	if o == nil || IsNil(o.HasScriptFlag) {
 		return nil, false
 	}
-	return o.HasScript, true
+	return o.HasScriptFlag, true
 }
 
-// HasHasScript returns a boolean if a field has been set.
-func (o *AlertEntitiesAlert) HasHasScript() bool {
-	if o != nil && !IsNil(o.HasScript) {
+// HasHasScriptFlag returns a boolean if a field has been set.
+func (o *AlertEntitiesAlert) HasHasScriptFlag() bool {
+	if o != nil && !IsNil(o.HasScriptFlag) {
 		return true
 	}
 
 	return false
 }
 
-// SetHasScript gets a reference to the given bool and assigns it to the HasScript field.
-func (o *AlertEntitiesAlert) SetHasScript(v bool) {
-	o.HasScript = &v
+// SetHasScriptFlag gets a reference to the given bool and assigns it to the HasScriptFlag field.
+func (o *AlertEntitiesAlert) SetHasScriptFlag(v bool) {
+	o.HasScriptFlag = &v
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
@@ -921,8 +921,8 @@ func (o AlertEntitiesAlert) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.FactIdentifier) {
 		toSerialize["fact_identifier"] = o.FactIdentifier
 	}
-	if !IsNil(o.HasScript) {
-		toSerialize["has_script"] = o.HasScript
+	if !IsNil(o.HasScriptFlag) {
+		toSerialize["has_script"] = o.HasScriptFlag
 	}
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id

@@ -1031,7 +1031,6 @@ Class | Method | HTTP request | Description
  - [SelfServiceServiceOnboardingConfiguration](docs/SelfServiceServiceOnboardingConfiguration.md)
  - [SelfServiceServiceSelfServiceAssignedConfigurations](docs/SelfServiceServiceSelfServiceAssignedConfigurations.md)
  - [SelfServiceServiceSelfServiceConfiguration](docs/SelfServiceServiceSelfServiceConfiguration.md)
- - [SelfServiceServiceSelfServiceConfigurationForIOS](docs/SelfServiceServiceSelfServiceConfigurationForIOS.md)
  - [SelfServiceServiceSelfServiceSoftware](docs/SelfServiceServiceSelfServiceSoftware.md)
  - [SelfServiceServiceSelfServiceSoftwareAssignment](docs/SelfServiceServiceSelfServiceSoftwareAssignment.md)
  - [SelfServiceServiceSelfServiceSoftwareQuery](docs/SelfServiceServiceSelfServiceSoftwareQuery.md)
