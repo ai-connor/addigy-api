@@ -6,6 +6,6 @@ globalProperties:
 additionalProperties:
   structPrefix: true
   hideGenerationTimestamp: true
-  packageName: pipedriveapi
+  packageName: addigyapi
   disallowAdditionalPropertiesIfNotPresent: false
   enumClassPrefix: true

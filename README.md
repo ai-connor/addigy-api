@@ -1,4 +1,4 @@
-# Go API client for pipedriveapi
+# Go API client for addigyapi
 
 The [Addigy API](https://app.addigy.com/integrations) is designed to provide Addigy users with programmatic access to all data in their Addigy environment. Via the Addigy API users have read and write access to nearly all the data in their environment allowing them to automate activities in Addigy and integrate into 3rd party systems.<br>
 API keys can be created within your Addigy organization by visiting [Account -> Integrations](https://app.addigy.com/integrations).<br>
@@ -28,7 +28,7 @@ go get golang.org/x/net/context
 Put the package under your project folder and add the following in import:
 
 ```go
-import pipedriveapi "github.com/ai-connor/pipedrive-api"
+import addigyapi "github.com/ai-connor/pipedrive-api"
 ```
 
 To use a proxy, set the environment variable `HTTP_PROXY`:
@@ -43,18 +43,18 @@ Default configuration comes with `Servers` field that contains server objects as
 
 ### Select Server Configuration
 
-For using other server than the one defined on index 0 set context value `pipedriveapi.ContextServerIndex` of type `int`.
+For using other server than the one defined on index 0 set context value `addigyapi.ContextServerIndex` of type `int`.
 
 ```go
-ctx := context.WithValue(context.Background(), pipedriveapi.ContextServerIndex, 1)
+ctx := context.WithValue(context.Background(), addigyapi.ContextServerIndex, 1)
 ```
 
 ### Templated Server URL
 
-Templated server URL is formatted using default variables from configuration or from context value `pipedriveapi.ContextServerVariables` of type `map[string]string`.
+Templated server URL is formatted using default variables from configuration or from context value `addigyapi.ContextServerVariables` of type `map[string]string`.
 
 ```go
-ctx := context.WithValue(context.Background(), pipedriveapi.ContextServerVariables, map[string]string{
+ctx := context.WithValue(context.Background(), addigyapi.ContextServerVariables, map[string]string{
 	"basePath": "v2",
 })
 ```
@@ -65,13 +65,13 @@ Note, enum values are always validated and all unused variables are silently ign
 
 Each operation can use different server URL defined using `OperationServers` map in the `Configuration`.
 An operation is uniquely identified by `"{classname}Service.{nickname}"` string.
-Similar rules for overriding default operation server index and variables applies by using `pipedriveapi.ContextOperationServerIndices` and `pipedriveapi.ContextOperationServerVariables` context maps.
+Similar rules for overriding default operation server index and variables applies by using `addigyapi.ContextOperationServerIndices` and `addigyapi.ContextOperationServerVariables` context maps.
 
 ```go
-ctx := context.WithValue(context.Background(), pipedriveapi.ContextOperationServerIndices, map[string]int{
+ctx := context.WithValue(context.Background(), addigyapi.ContextOperationServerIndices, map[string]int{
 	"{classname}Service.{nickname}": 2,
 })
-ctx = context.WithValue(context.Background(), pipedriveapi.ContextOperationServerVariables, map[string]map[string]string{
+ctx = context.WithValue(context.Background(), addigyapi.ContextOperationServerVariables, map[string]map[string]string{
 	"{classname}Service.{nickname}": {
 		"port": "8443",
 	},
@@ -1167,8 +1167,8 @@ Example
 ```go
 auth := context.WithValue(
 		context.Background(),
-		pipedriveapi.ContextAPIKeys,
-		map[string]pipedriveapi.APIKey{
+		addigyapi.ContextAPIKeys,
+		map[string]addigyapi.APIKey{
 			"ApiKeyAuth": {Key: "API_KEY_STRING"},
 		},
 	)
