@@ -19,16 +19,15 @@ var _ MappedNullable = &SelfServiceServiceSelfServiceAssignedConfigurations{}
 
 // SelfServiceServiceSelfServiceAssignedConfigurations struct for SelfServiceServiceSelfServiceAssignedConfigurations
 type SelfServiceServiceSelfServiceAssignedConfigurations struct {
-	OrganizationId                             *string                                           `json:"organization_id,omitempty"`
-	PolicyIdForIos                             *string                                           `json:"policy_id_for_ios,omitempty"`
-	PolicyIdForMacOs                           *string                                           `json:"policy_id_for_mac_os,omitempty"`
-	PolicyIdForMacOsOnboarding                 *string                                           `json:"policy_id_for_mac_os_onboarding,omitempty"`
-	PolicyNameForIos                           *string                                           `json:"policy_name_for_ios,omitempty"`
-	PolicyNameForMacOs                         *string                                           `json:"policy_name_for_mac_os,omitempty"`
-	PolicyNameForMacOsOnboarding               *string                                           `json:"policy_name_for_mac_os_onboarding,omitempty"`
-	SelfServiceConfigurationForIos             *SelfServiceServiceSelfServiceConfigurationForIOS `json:"self_service_configuration_for_ios,omitempty"`
-	SelfServiceConfigurationForMacOs           *SelfServiceServiceSelfServiceConfiguration       `json:"self_service_configuration_for_mac_os,omitempty"`
-	SelfServiceConfigurationForMacOsOnboarding *SelfServiceServiceOnboardingConfiguration        `json:"self_service_configuration_for_mac_os_onboarding,omitempty"`
+	OrganizationId                             *string                                     `json:"organization_id,omitempty"`
+	PolicyIdForIos                             *string                                     `json:"policy_id_for_ios,omitempty"`
+	PolicyIdForMacOs                           *string                                     `json:"policy_id_for_mac_os,omitempty"`
+	PolicyIdForMacOsOnboarding                 *string                                     `json:"policy_id_for_mac_os_onboarding,omitempty"`
+	PolicyNameForIos                           *string                                     `json:"policy_name_for_ios,omitempty"`
+	PolicyNameForMacOs                         *string                                     `json:"policy_name_for_mac_os,omitempty"`
+	PolicyNameForMacOsOnboarding               *string                                     `json:"policy_name_for_mac_os_onboarding,omitempty"`
+	SelfServiceConfigurationForMacOs           *SelfServiceServiceSelfServiceConfiguration `json:"self_service_configuration_for_mac_os,omitempty"`
+	SelfServiceConfigurationForMacOsOnboarding *SelfServiceServiceOnboardingConfiguration  `json:"self_service_configuration_for_mac_os_onboarding,omitempty"`
 	AdditionalProperties                       map[string]interface{}
 }
 
@@ -275,38 +274,6 @@ func (o *SelfServiceServiceSelfServiceAssignedConfigurations) SetPolicyNameForMa
 	o.PolicyNameForMacOsOnboarding = &v
 }
 
-// GetSelfServiceConfigurationForIos returns the SelfServiceConfigurationForIos field value if set, zero value otherwise.
-func (o *SelfServiceServiceSelfServiceAssignedConfigurations) GetSelfServiceConfigurationForIos() SelfServiceServiceSelfServiceConfigurationForIOS {
-	if o == nil || IsNil(o.SelfServiceConfigurationForIos) {
-		var ret SelfServiceServiceSelfServiceConfigurationForIOS
-		return ret
-	}
-	return *o.SelfServiceConfigurationForIos
-}
-
-// GetSelfServiceConfigurationForIosOk returns a tuple with the SelfServiceConfigurationForIos field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SelfServiceServiceSelfServiceAssignedConfigurations) GetSelfServiceConfigurationForIosOk() (*SelfServiceServiceSelfServiceConfigurationForIOS, bool) {
-	if o == nil || IsNil(o.SelfServiceConfigurationForIos) {
-		return nil, false
-	}
-	return o.SelfServiceConfigurationForIos, true
-}
-
-// HasSelfServiceConfigurationForIos returns a boolean if a field has been set.
-func (o *SelfServiceServiceSelfServiceAssignedConfigurations) HasSelfServiceConfigurationForIos() bool {
-	if o != nil && !IsNil(o.SelfServiceConfigurationForIos) {
-		return true
-	}
-
-	return false
-}
-
-// SetSelfServiceConfigurationForIos gets a reference to the given SelfServiceServiceSelfServiceConfigurationForIOS and assigns it to the SelfServiceConfigurationForIos field.
-func (o *SelfServiceServiceSelfServiceAssignedConfigurations) SetSelfServiceConfigurationForIos(v SelfServiceServiceSelfServiceConfigurationForIOS) {
-	o.SelfServiceConfigurationForIos = &v
-}
-
 // GetSelfServiceConfigurationForMacOs returns the SelfServiceConfigurationForMacOs field value if set, zero value otherwise.
 func (o *SelfServiceServiceSelfServiceAssignedConfigurations) GetSelfServiceConfigurationForMacOs() SelfServiceServiceSelfServiceConfiguration {
 	if o == nil || IsNil(o.SelfServiceConfigurationForMacOs) {
@@ -402,9 +369,6 @@ func (o SelfServiceServiceSelfServiceAssignedConfigurations) ToMap() (map[string
 	if !IsNil(o.PolicyNameForMacOsOnboarding) {
 		toSerialize["policy_name_for_mac_os_onboarding"] = o.PolicyNameForMacOsOnboarding
 	}
-	if !IsNil(o.SelfServiceConfigurationForIos) {
-		toSerialize["self_service_configuration_for_ios"] = o.SelfServiceConfigurationForIos
-	}
 	if !IsNil(o.SelfServiceConfigurationForMacOs) {
 		toSerialize["self_service_configuration_for_mac_os"] = o.SelfServiceConfigurationForMacOs
 	}
@@ -440,7 +404,6 @@ func (o *SelfServiceServiceSelfServiceAssignedConfigurations) UnmarshalJSON(data
 		delete(additionalProperties, "policy_name_for_ios")
 		delete(additionalProperties, "policy_name_for_mac_os")
 		delete(additionalProperties, "policy_name_for_mac_os_onboarding")
-		delete(additionalProperties, "self_service_configuration_for_ios")
 		delete(additionalProperties, "self_service_configuration_for_mac_os")
 		delete(additionalProperties, "self_service_configuration_for_mac_os_onboarding")
 		o.AdditionalProperties = additionalProperties
