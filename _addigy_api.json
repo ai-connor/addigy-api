@@ -20119,7 +20119,8 @@
                     "type": "string"
                 },
                 "has_script": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "x-go-name": "HasScriptFlag"
                 },
                 "id": {
                     "type": "string"
@@ -20496,7 +20497,8 @@
                     "type": "string"
                 },
                 "has_script": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "x-go-name": "HasScriptFlag"
                 },
                 "instructions": {},
                 "level": {
@@ -33448,9 +33450,6 @@
                 "policy_name_for_mac_os_onboarding": {
                     "type": "string"
                 },
-                "self_service_configuration_for_ios": {
-                    "$ref": "#/definitions/self_service_service.SelfServiceConfigurationForIOS"
-                },
                 "self_service_configuration_for_mac_os": {
                     "$ref": "#/definitions/self_service_service.SelfServiceConfiguration"
                 },
@@ -33593,65 +33592,6 @@
                     "type": "string"
                 },
                 "user_sentiment_prompt_text": {
-                    "type": "string"
-                }
-            }
-        },
-        "self_service_service.SelfServiceConfigurationForIOS": {
-            "type": "object",
-            "properties": {
-                "allow_location_tracking": {
-                    "type": "boolean"
-                },
-                "app_logo": {
-                    "$ref": "#/definitions/self_service_service.Download"
-                },
-                "description": {
-                    "type": "string"
-                },
-                "home_screen_address": {
-                    "type": "string"
-                },
-                "home_screen_company_name": {
-                    "type": "string"
-                },
-                "home_screen_configure_details": {
-                    "type": "boolean"
-                },
-                "home_screen_description": {
-                    "type": "string"
-                },
-                "home_screen_email": {
-                    "type": "string"
-                },
-                "home_screen_phone": {
-                    "type": "string"
-                },
-                "home_screen_show_address": {
-                    "type": "boolean"
-                },
-                "home_screen_show_description": {
-                    "type": "boolean"
-                },
-                "home_screen_show_email": {
-                    "type": "boolean"
-                },
-                "home_screen_show_phone": {
-                    "type": "boolean"
-                },
-                "instruction_id": {
-                    "type": "string"
-                },
-                "integration_intune_enabled": {
-                    "type": "boolean"
-                },
-                "name": {
-                    "type": "string"
-                },
-                "organization_id": {
-                    "type": "string"
-                },
-                "provider": {
                     "type": "string"
                 }
             }
