@@ -3,7 +3,7 @@ name: Build OAPI
 on:
   push:
     paths:
-      - '_addigy-api.json'
+      - '_addigy_api.json'
 
 jobs:
   build-oapi:
