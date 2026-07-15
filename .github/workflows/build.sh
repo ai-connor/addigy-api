@@ -9,5 +9,8 @@ openapi-generator-cli generate \
     --git-user-id ai-connor \
     --git-repo-id addigy-api
 
+# Post-generation fixups (e.g. free-form values -> interface{}); see postprocess.py.
+python3 postprocess.py
+
 cd ../..
 go fmt
