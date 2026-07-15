@@ -19,9 +19,9 @@ var _ MappedNullable = &DeviceEntitiesDeviceFact{}
 
 // DeviceEntitiesDeviceFact struct for DeviceEntitiesDeviceFact
 type DeviceEntitiesDeviceFact struct {
-	ErrorMsg             *string                `json:"error_msg,omitempty"`
-	Type                 *string                `json:"type,omitempty"`
-	Value                map[string]interface{} `json:"value,omitempty"`
+	ErrorMsg             *string     `json:"error_msg,omitempty"`
+	Type                 *string     `json:"type,omitempty"`
+	Value                interface{} `json:"value,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -108,10 +108,10 @@ func (o *DeviceEntitiesDeviceFact) SetType(v string) {
 	o.Type = &v
 }
 
-// GetValue returns the Value field value if set, zero value otherwise.
-func (o *DeviceEntitiesDeviceFact) GetValue() map[string]interface{} {
-	if o == nil || IsNil(o.Value) {
-		var ret map[string]interface{}
+// GetValue returns the Value field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *DeviceEntitiesDeviceFact) GetValue() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
 	return o.Value
@@ -119,11 +119,12 @@ func (o *DeviceEntitiesDeviceFact) GetValue() map[string]interface{} {
 
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DeviceEntitiesDeviceFact) GetValueOk() (map[string]interface{}, bool) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *DeviceEntitiesDeviceFact) GetValueOk() (*interface{}, bool) {
 	if o == nil || IsNil(o.Value) {
-		return map[string]interface{}{}, false
+		return nil, false
 	}
-	return o.Value, true
+	return &o.Value, true
 }
 
 // HasValue returns a boolean if a field has been set.
@@ -135,8 +136,8 @@ func (o *DeviceEntitiesDeviceFact) HasValue() bool {
 	return false
 }
 
-// SetValue gets a reference to the given map[string]interface{} and assigns it to the Value field.
-func (o *DeviceEntitiesDeviceFact) SetValue(v map[string]interface{}) {
+// SetValue gets a reference to the given interface{} and assigns it to the Value field.
+func (o *DeviceEntitiesDeviceFact) SetValue(v interface{}) {
 	o.Value = v
 }
 
